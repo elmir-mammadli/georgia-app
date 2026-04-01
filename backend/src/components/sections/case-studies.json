@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_sections_case_studies",
+  "info": {
+    "displayName": "Case Studies",
+    "icon": "file",
+    "description": "Case studies grid section"
+  },
+  "options": {},
+  "attributes": {
+    "sectionConfig": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section-config"
+    },
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "columns": {
+      "type": "enumeration",
+      "enum": ["2", "3", "4"],
+      "default": "3"
+    },
+    "cases": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.case-study-item"
+    }
+  }
+}

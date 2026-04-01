@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_stats_banners",
+  "info": {
+    "displayName": "Stats Banner",
+    "icon": "chartBubble",
+    "description": "Stats banner with key metrics"
+  },
+  "options": {},
+  "attributes": {
+    "sectionConfig": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section-config"
+    },
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.stat-item"
+    }
+  }
+}

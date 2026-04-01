@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_section_configs",
+  "info": {
+    "displayName": "Section Config",
+    "icon": "cog",
+    "description": "Per-section appearance and behavior settings"
+  },
+  "options": {},
+  "attributes": {
+    "sectionId": {
+      "type": "string",
+      "regex": "^[a-z][a-z0-9-]*$",
+      "description": "HTML anchor ID for navigation (e.g. 'about', 'faq')"
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": ["white", "light", "mint", "primary"],
+      "default": "white",
+      "required": true
+    }
+  }
+}

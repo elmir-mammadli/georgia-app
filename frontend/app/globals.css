@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/*
+  Corporate palette (Figma)
+  #004D43  primary dark green
+  #96BAFD  soft blue
+  #193133  deep dark
+  #D0FF73  accent lime
+  #EBFFF6  soft mint background
+  #21EBA7  bright accent
+*/
+
+@theme inline {
+  --color-primary: #004D43;
+  --color-primary-light: #21EBA7;
+  --color-primary-dark: #004D43;
+  --color-secondary: #D0FF73;
+  --color-secondary-light: #dcff9a;
+  --color-accent: #21EBA7;
+  --color-accent-blue: #96BAFD;
+  --color-bg-light: #EBFFF6;
+  --color-bg-mint: #EBFFF6;
+  --color-bg-dark: #193133;
+  --color-text-primary: #193133;
+  --color-text-secondary: #4a6163;
+  --color-text-light: #7a9497;
+  --color-white: #ffffff;
+  --color-border: #c8ebe0;
+
+  --font-sans: var(--font-sora), "Sora Placeholder", sans-serif;
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  background: linear-gradient(180deg, #ebfff6 0%, #ffffff 28%, #ffffff 100%);
+  color: var(--color-text-primary);
+}

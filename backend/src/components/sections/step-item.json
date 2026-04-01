@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_step_items",
+  "info": {
+    "displayName": "Step Item",
+    "icon": "arrowRight",
+    "description": "Individual step entry"
+  },
+  "options": {},
+  "attributes": {
+    "stepNumber": {
+      "type": "integer",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

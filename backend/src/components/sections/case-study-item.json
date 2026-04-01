@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_case_study_items",
+  "info": {
+    "displayName": "Case Study Item",
+    "icon": "file",
+    "description": "Individual case study entry"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "tag": {
+      "type": "string"
+    }
+  }
+}
