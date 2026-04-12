@@ -1,9 +1,28 @@
+# Dependencies
 node_modules/
+.pnpm-store/
+
+# Next.js
 .next/
-.tmp/
-.cache/
-build/
-dist/
+out/
+
+# Strapi
+cms/.tmp/
+cms/dist/
+cms/build/
+cms/.cache/
+
+# Environment files
 .env
 .env.local
+*.env.local
+
+# Build output
+build/
+dist/
+
+# Misc
+.cache/
+.tmp/
 *.log
+.DS_Store

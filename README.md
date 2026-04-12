@@ -5,24 +5,28 @@ Next.js + Strapi CMS marketing website for Georgia soft-skills training platform
 ## Project Structure
 
 ```
-georgia-react/
+georgia-app-react/          (pnpm monorepo)
   frontend/    → Next.js 16 (App Router, TypeScript, Tailwind CSS)
-  backend/     → Strapi 5 (Headless CMS)
+  cms/         → Strapi 5 (Headless CMS)
 ```
 
 ## Prerequisites
 
 - Node.js >= 20.0.0
-- npm >= 6.0.0
+- pnpm >= 10
 
 ## Getting Started
 
-### 1. Backend (Strapi)
+### 1. Install dependencies
 
 ```bash
-cd backend
-npm install
-npm run develop
+pnpm install
+```
+
+### 2. Start CMS (Strapi)
+
+```bash
+pnpm dev:cms
 ```
 
 Strapi will start at `http://localhost:1337`. On first run:
@@ -30,17 +34,21 @@ Strapi will start at `http://localhost:1337`. On first run:
 - Go to Settings → API Tokens and create a full-access token
 - Copy the token to `frontend/.env.local`
 
-### 2. Frontend (Next.js)
+### 3. Start Frontend (Next.js)
 
 ```bash
-cd frontend
-npm install
-npm run dev
+pnpm dev:frontend
 ```
 
 Next.js will start at `http://localhost:3000`.
 
-### 3. Create Content
+### 4. Or run both at once
+
+```bash
+pnpm dev
+```
+
+### 5. Create Content
 
 In Strapi admin (`http://localhost:1337/admin`):
 
@@ -67,7 +75,7 @@ In Strapi admin (`http://localhost:1337/admin`):
 | `STRAPI_API_TOKEN` | Strapi API token | — |
 | `NEXT_PUBLIC_STRAPI_URL` | Strapi URL (for image URLs) | `http://localhost:1337` |
 
-### Backend (`backend/.env`)
+### CMS (`cms/.env`)
 
 | Variable | Description |
 |----------|-------------|

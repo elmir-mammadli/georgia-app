@@ -1,0 +1,42 @@
+{
+  "name": "georgia-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Georgia marketing website — Next.js + Strapi CMS",
+  "scripts": {
+    "dev": "concurrently \"pnpm dev:next\" \"pnpm dev:cms\"",
+    "dev:next": "next dev --webpack",
+    "dev:cms": "pnpm --prefix cms run develop",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "next": "16.2.1",
+    "qs": "^6.15.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.27",
+    "concurrently": "^9",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.1",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^5"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@10.8.1"
+}
