@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": ".",
+    "module": "commonjs",
+    "target": "ES2020",
+    "skipLibCheck": true
+  },
+  "files": [
+    "./types/strapi-stub.d.ts"
+  ]
+}

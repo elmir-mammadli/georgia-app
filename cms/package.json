@@ -5,8 +5,10 @@
   "description": "Georgia CMS Backend",
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi start",
     "build": "strapi build",
+    "postbuild": "node ./scripts/prepare-dist.js",
+    "prestart": "node ./scripts/prepare-dist.js",
+    "start": "strapi start",
     "strapi": "strapi"
   },
   "dependencies": {
