@@ -1,10 +1,18 @@
-module.exports = ({ env }) => ({
-  'cloud-cronjob-runner': {
-    enabled: true,
-    config: {
-      apiToken: env('STRAPI_CLOUD_API_TOKEN', 'placeholder-token'),
-      apiUrl: env('STRAPI_CLOUD_API_URL', 'https://cloud.strapi.io'),
-      firstRunWindow: env.int('STRAPI_CLOUD_FIRST_RUN_WINDOW', 60),
+module.exports = ({ env }) => {
+  const apiToken = env('STRAPI_CLOUD_API_TOKEN');
+  const apiUrl = env('STRAPI_CLOUD_API_URL');
+  const isCloudRunnerEnabled = Boolean(apiToken && apiUrl);
+
+  return {
+    'cloud-cronjob-runner': {
+      enabled: isCloudRunnerEnabled,
+      config: isCloudRunnerEnabled
+        ? {
+            apiToken,
+            apiUrl,
+            firstRunWindow: env.int('STRAPI_CLOUD_FIRST_RUN_WINDOW', 60),
+          }
+        : {},
     },
-  },
-});
+  };
+};
