@@ -6,8 +6,6 @@
   "scripts": {
     "develop": "strapi develop",
     "build": "strapi build",
-    "postbuild": "node ./scripts/prepare-dist.js",
-    "prestart": "node ./scripts/prepare-dist.js",
     "start": "strapi start",
     "strapi": "strapi"
   },
