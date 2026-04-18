@@ -10,10 +10,10 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "^5.40.0",
-    "@strapi/plugin-users-permissions": "^5.40.0",
-    "@strapi/strapi": "^5.40.0",
-    "@strapi/typescript-utils": "^5.40.0",
+    "@strapi/plugin-cloud": "5.42.1",
+    "@strapi/plugin-users-permissions": "5.42.1",
+    "@strapi/strapi": "5.42.1",
+    "@strapi/typescript-utils": "5.42.1",
     "better-sqlite3": "^11.0.0",
     "esbuild": "^0.27.4",
     "react": "^18.3.1",
