@@ -13,6 +13,8 @@ import './../src/components/sections/stat-item.json';
 import './../src/components/sections/stats-banner.json';
 import './../src/components/sections/step-item.json';
 import './../src/components/sections/steps.json';
+import './../src/components/sections/typical-case-item.json';
+import './../src/components/sections/typical-cases.json';
 import './../src/components/sections/video.json';
 import './../src/components/shared/section-config.json';
 import './../src/components/shared/seo.json';

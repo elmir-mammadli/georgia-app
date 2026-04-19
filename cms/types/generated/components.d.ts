@@ -208,6 +208,43 @@ export interface SectionsSteps extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsTypicalCaseItem extends Struct.ComponentSchema {
+  collectionName: 'components_sections_typical_case_items';
+  info: {
+    description: 'Individual typical case entry';
+    displayName: 'Typical Case Item';
+    icon: 'file';
+  };
+  attributes: {
+    primaryImage: Schema.Attribute.Media<'images'>;
+    primaryImageUrl: Schema.Attribute.String;
+    secondaryImage: Schema.Attribute.Media<'images'>;
+    secondaryImageUrl: Schema.Attribute.String;
+    situations: Schema.Attribute.Text & Schema.Attribute.Required;
+    situationsTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Situations'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    userTypes: Schema.Attribute.Text & Schema.Attribute.Required;
+    userTypesTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'User types'>;
+  };
+}
+
+export interface SectionsTypicalCases extends Struct.ComponentSchema {
+  collectionName: 'components_sections_typical_cases';
+  info: {
+    description: 'Typical cases showcase section';
+    displayName: 'Typical Cases';
+    icon: 'grid';
+  };
+  attributes: {
+    cases: Schema.Attribute.Component<'sections.typical-case-item', true>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    sectionConfig: Schema.Attribute.Component<'shared.section-config', false>;
+    subtitle: Schema.Attribute.Text;
+  };
+}
+
 export interface SectionsVideo extends Struct.ComponentSchema {
   collectionName: 'components_sections_videos';
   info: {
@@ -278,6 +315,8 @@ declare module '@strapi/strapi' {
       'sections.stats-banner': SectionsStatsBanner;
       'sections.step-item': SectionsStepItem;
       'sections.steps': SectionsSteps;
+      'sections.typical-case-item': SectionsTypicalCaseItem;
+      'sections.typical-cases': SectionsTypicalCases;
       'sections.video': SectionsVideo;
       'shared.section-config': SharedSectionConfig;
       'shared.seo': SharedSeo;

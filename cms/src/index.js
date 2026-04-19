@@ -171,7 +171,40 @@ const HOME_PAGE_DATA = {
       ],
     },
 
-    // Section 6 — FAQ
+    // Section 6 — Typical Cases
+    {
+      __component: "sections.typical-cases",
+      sectionConfig: { sectionId: "typical-cases", theme: "primary" },
+      heading: "Typical Cases",
+      subtitle:
+        "Examples teams can rehearse before the pressure hits the real conversation.",
+      cases: [
+        {
+          title: "Sales",
+          userTypesTitle: "User types",
+          userTypes: "Sales reps, Key account managers, General managers",
+          situationsTitle: "Situations",
+          situations: "Price pressure, Margin pressure",
+          primaryImageUrl:
+            "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80",
+          secondaryImageUrl:
+            "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+        },
+        {
+          title: "Customer service",
+          userTypesTitle: "User types",
+          userTypes: "Dispatchers, Customer support, Project managers",
+          situationsTitle: "Situations",
+          situations: "Delays, Client pressure, Complaints",
+          primaryImageUrl:
+            "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+          secondaryImageUrl:
+            "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80",
+        },
+      ],
+    },
+
+    // Section 7 — FAQ
     {
       __component: "sections.faq",
       sectionConfig: { sectionId: "faq", theme: "light" },
@@ -202,7 +235,7 @@ const HOME_PAGE_DATA = {
       ],
     },
 
-    // Section 7 — CTA
+    // Section 8 — CTA
     {
       __component: "sections.cta",
       sectionConfig: { sectionId: "contact", theme: "mint" },

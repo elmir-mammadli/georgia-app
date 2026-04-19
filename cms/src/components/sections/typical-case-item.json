@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_sections_typical_case_items",
+  "info": {
+    "displayName": "Typical Case Item",
+    "icon": "file",
+    "description": "Individual typical case entry"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "userTypesTitle": {
+      "type": "string",
+      "default": "User types"
+    },
+    "userTypes": {
+      "type": "text",
+      "required": true
+    },
+    "situationsTitle": {
+      "type": "string",
+      "default": "Situations"
+    },
+    "situations": {
+      "type": "text",
+      "required": true
+    },
+    "primaryImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "primaryImageUrl": {
+      "type": "string"
+    },
+    "secondaryImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "secondaryImageUrl": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_typical_cases",
+  "info": {
+    "displayName": "Typical Cases",
+    "icon": "grid",
+    "description": "Typical cases showcase section"
+  },
+  "options": {},
+  "attributes": {
+    "sectionConfig": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section-config"
+    },
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "cases": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.typical-case-item"
+    }
+  }
+}

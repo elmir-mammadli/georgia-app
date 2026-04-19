@@ -492,6 +492,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.steps',
         'sections.video',
         'sections.case-studies',
+        'sections.typical-cases',
         'sections.faq',
         'sections.cta',
       ]
