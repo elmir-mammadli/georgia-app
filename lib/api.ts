@@ -6,6 +6,7 @@ const STRAPI_URL =
   process.env.NEXT_PUBLIC_STRAPI_URL ||
   "http://localhost:1337";
 const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN;
+const STRAPI_REVALIDATE_SECONDS = 5;
 
 async function fetchStrapi<T>(path: string, query?: string): Promise<T> {
   const url = new URL(`/api${path}`, STRAPI_URL);
@@ -23,7 +24,7 @@ async function fetchStrapi<T>(path: string, query?: string): Promise<T> {
 
   const res = await fetch(url.toString(), {
     headers,
-    next: { revalidate: 60 },
+    next: { revalidate: STRAPI_REVALIDATE_SECONDS },
   });
 
   if (!res.ok) {

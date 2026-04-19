@@ -26,6 +26,13 @@ interface SectionWrapperProps {
   containerClassName?: string;
 }
 
+export function resolveSectionTheme(
+  config?: SectionConfig,
+  defaultTheme: SectionTheme = "white"
+): SectionTheme {
+  return config?.theme ?? defaultTheme;
+}
+
 export function SectionWrapper({
   config,
   defaultTheme = "white",
@@ -33,7 +40,7 @@ export function SectionWrapper({
   className,
   containerClassName,
 }: SectionWrapperProps) {
-  const theme = config?.theme ?? defaultTheme;
+  const theme = resolveSectionTheme(config, defaultTheme);
   const { bg } = themeStyles[theme];
 
   return (
@@ -47,6 +54,6 @@ export function SectionWrapper({
 }
 
 export function useThemeText(config?: SectionConfig, defaultTheme?: SectionTheme): boolean {
-  const theme = config?.theme ?? defaultTheme ?? "white";
+  const theme = resolveSectionTheme(config, defaultTheme ?? "white");
   return themeStyles[theme].text === "light";
 }
