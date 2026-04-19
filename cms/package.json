@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "Georgia CMS Backend",
   "scripts": {
-    "develop": "strapi develop",
+    "develop": "node scripts/develop-local.js",
     "build": "strapi build",
     "start": "strapi start",
     "strapi": "strapi"

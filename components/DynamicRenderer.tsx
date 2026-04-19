@@ -7,6 +7,7 @@ import { VideoSection } from "./sections/VideoSection";
 import { CaseStudiesSection } from "./sections/CaseStudiesSection";
 import { FAQSection } from "./sections/FAQSection";
 import { CTASection } from "./sections/CTASection";
+import { TypicalCases } from "./sections/TypicalCases";
 
 type SectionComponentName = StrapiSection["__component"];
 
@@ -31,6 +32,7 @@ const componentMap: SectionComponentMap = {
   "sections.steps": StepsSection,
   "sections.video": VideoSection,
   "sections.case-studies": CaseStudiesSection,
+  "sections.typical-cases": TypicalCases,
   "sections.faq": FAQSection,
   "sections.cta": CTASection,
 };
@@ -81,6 +83,10 @@ function renderSection(section: StrapiSection, index: number): React.ReactNode {
     case "sections.case-studies": {
       const { __component, ...props } = section;
       return <CaseStudiesSection key={`${__component}-${index}`} {...props} />;
+    }
+    case "sections.typical-cases": {
+      const { __component, ...props } = section;
+      return <TypicalCases key={`${__component}-${index}`} {...props} />;
     }
     case "sections.faq": {
       const { __component, ...props } = section;

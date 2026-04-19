@@ -6,6 +6,7 @@ import type {
   HeroSectionData,
   StatsBannerData,
   StepsSectionData,
+  TypicalCasesSectionData,
   VideoSectionData,
 } from "@/types/strapi";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -16,6 +17,7 @@ import { VideoSection } from "@/components/sections/VideoSection";
 import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { TypicalCases } from "@/components/sections/TypicalCases";
 
 const hero: Omit<HeroSectionData, "__component"> = {
   id: 1,
@@ -285,6 +287,40 @@ const cta: Omit<CTASectionData, "__component"> = {
   ],
 };
 
+const typicalCases: Omit<TypicalCasesSectionData, "__component"> = {
+  id: 9,
+  sectionConfig: { sectionId: "typical-cases", theme: "primary" },
+  heading: "Typical Cases",
+  subtitle:
+    "Examples teams can rehearse before the pressure hits the real conversation.",
+  cases: [
+    {
+      id: 1,
+      title: "Sales",
+      userTypesTitle: "User types",
+      userTypes: "Sales reps, Key account managers, General managers",
+      situationsTitle: "Situations",
+      situations: "Price pressure, Margin pressure",
+      primaryImageUrl:
+        "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80",
+      secondaryImageUrl:
+        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      id: 2,
+      title: "Customer service",
+      userTypesTitle: "User types",
+      userTypes: "Dispatchers, Customer support, Project managers",
+      situationsTitle: "Situations",
+      situations: "Delays, Client pressure, Complaints",
+      primaryImageUrl:
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+      secondaryImageUrl:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80",
+    },
+  ],
+};
+
 export default function HomeStaticPage() {
   return (
     <>
@@ -294,6 +330,7 @@ export default function HomeStaticPage() {
       <StepsSection {...steps} />
       <VideoSection {...video} />
       <CaseStudiesSection {...caseStudies} />
+      <TypicalCases {...typicalCases} />
       <FAQSection {...faq} />
       <CTASection {...cta} />
     </>

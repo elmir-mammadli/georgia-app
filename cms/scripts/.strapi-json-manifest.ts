@@ -1,0 +1,20 @@
+import './../src/api/form-submission/content-types/form-submission/schema.json';
+import './../src/api/page/content-types/page/schema.json';
+import './../src/components/sections/case-studies.json';
+import './../src/components/sections/case-study-item.json';
+import './../src/components/sections/cta.json';
+import './../src/components/sections/faq-item.json';
+import './../src/components/sections/faq.json';
+import './../src/components/sections/feature-item.json';
+import './../src/components/sections/features.json';
+import './../src/components/sections/form-field.json';
+import './../src/components/sections/hero.json';
+import './../src/components/sections/stat-item.json';
+import './../src/components/sections/stats-banner.json';
+import './../src/components/sections/step-item.json';
+import './../src/components/sections/steps.json';
+import './../src/components/sections/video.json';
+import './../src/components/shared/section-config.json';
+import './../src/components/shared/seo.json';
+
+export {};

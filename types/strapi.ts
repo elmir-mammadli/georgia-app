@@ -76,6 +76,7 @@ export type StrapiSection =
   | StepsSectionData
   | VideoSectionData
   | CaseStudiesSectionData
+  | TypicalCasesSectionData
   | FAQSectionData
   | CTASectionData;
 
@@ -161,6 +162,26 @@ export interface CaseStudiesSectionData {
     imageUrl?: string;
     tag?: string;
     points?: string[];
+  }>;
+}
+
+export interface TypicalCasesSectionData {
+  __component: "sections.typical-cases";
+  id: number;
+  sectionConfig?: SectionConfig;
+  heading: string;
+  subtitle?: string;
+  cases: Array<{
+    id: number;
+    title: string;
+    userTypesTitle?: string;
+    userTypes: string;
+    situationsTitle?: string;
+    situations: string;
+    primaryImage?: StrapiImage;
+    primaryImageUrl?: string;
+    secondaryImage?: StrapiImage;
+    secondaryImageUrl?: string;
   }>;
 }
 

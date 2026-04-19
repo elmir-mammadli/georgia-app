@@ -1,0 +1,11 @@
+packages:
+  - .
+  - cms
+
+onlyBuiltDependencies:
+  - better-sqlite3
+  - esbuild
+
+ignoredBuiltDependencies:
+  - sharp
+  - unrs-resolver

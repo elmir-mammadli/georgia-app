@@ -70,6 +70,14 @@ function buildPagePopulate(): string {
                 },
               },
             },
+            "sections.typical-cases": {
+              populate: {
+                sectionConfig: true,
+                cases: {
+                  populate: ["primaryImage", "secondaryImage"],
+                },
+              },
+            },
             "sections.faq": {
               populate: ["sectionConfig", "items"],
             },
