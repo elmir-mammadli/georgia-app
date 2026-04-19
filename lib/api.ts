@@ -1,7 +1,10 @@
 import qs from "qs";
 import type { PageData, StrapiCollectionResponse } from "@/types/strapi";
 
-const STRAPI_URL = process.env.STRAPI_URL || "http://localhost:1337";
+const STRAPI_URL =
+  process.env.STRAPI_URL ||
+  process.env.NEXT_PUBLIC_STRAPI_URL ||
+  "http://localhost:1337";
 const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN;
 
 async function fetchStrapi<T>(path: string, query?: string): Promise<T> {
@@ -108,7 +111,12 @@ export async function getPageBySlug(
 
     return response.data[0];
   } catch (error) {
-    console.error("Error fetching page:", error);
+    console.error(
+      `Error fetching page "${slug}" from ${STRAPI_URL} (token ${
+        STRAPI_TOKEN ? "present" : "missing"
+      }):`,
+      error
+    );
     return null;
   }
 }
