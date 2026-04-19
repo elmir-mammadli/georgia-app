@@ -1,34 +1,36 @@
 import type { Metadata } from "next";
 import { getPageBySlug } from "@/lib/api";
 import { DynamicRenderer } from "@/components/DynamicRenderer";
-import { getStrapiMedia } from "@/lib/utils";
 import HomeStaticPage from "@/app/home-static/page";
 
-const FALLBACK_SEO = {
-  metaTitle: "Georgia | Soft-Skills Training",
-  metaDescription:
-    "Affordable soft-skills training for high-pressure work environments.",
+const HOME_TITLE = "AI role-play platform | Georgia";
+const HOME_DESCRIPTION =
+  "Georgia is an AI role-play platform that makes soft-skills training affordable, safe, and easy to deploy with self-paced, 100% personalized practice for each user.";
+const HOME_URL = "https://www.georgia-app.com/";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: HOME_TITLE,
+  },
+  description: HOME_DESCRIPTION,
+  openGraph: {
+    url: HOME_URL,
+    type: "website",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+  },
+  other: {
+    "twitter:domain": "georgia-app.com",
+    "twitter:url": HOME_URL,
+    "og:image": "",
+    "twitter:image": "",
+  },
 };
-
-export async function generateMetadata(): Promise<Metadata> {
-  const page = await getPageBySlug("home");
-  const seo = page?.seo ?? FALLBACK_SEO;
-
-  return {
-    title: seo.metaTitle,
-    description: seo.metaDescription,
-    openGraph: {
-      title: seo.metaTitle,
-      description: seo.metaDescription,
-      ...(page?.seo?.ogImage && {
-        images: [{ url: getStrapiMedia(page.seo.ogImage.url) }],
-      }),
-    },
-    ...(page?.seo?.canonicalUrl && {
-      alternates: { canonical: page.seo.canonicalUrl },
-    }),
-  };
-}
 
 export default async function HomePage() {
   const page = await getPageBySlug("home");

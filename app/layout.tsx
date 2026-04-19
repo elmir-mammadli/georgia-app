@@ -10,12 +10,13 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.georgia-app.com"),
   title: {
-    default: "Georgia - Soft-Skills Training for High-Pressure Work Environments",
+    default: "AI role-play platform | Georgia",
     template: "%s | Georgia",
   },
   description:
-    "Affordable soft-skills training for high-pressure work environments. Improve communication, leadership, and team dynamics.",
+    "Georgia is an AI role-play platform that makes soft-skills training affordable, safe, and easy to deploy with self-paced, 100% personalized practice for each user.",
 };
 
 export default function RootLayout({
