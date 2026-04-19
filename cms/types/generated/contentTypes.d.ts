@@ -456,6 +456,7 @@ export interface ApiFormSubmissionFormSubmission
       Schema.Attribute.Private;
     message: Schema.Attribute.Text;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    payload: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
     source: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'website-contact'>;

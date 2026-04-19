@@ -4,9 +4,9 @@ const { spawn } = require('node:child_process');
 
 const cwd = process.cwd();
 const tsconfigPath = path.join(cwd, 'tsconfig.json');
-const backupPath = path.join(cwd, 'tsconfig.json.local-backup');
+const backupPath = path.join(cwd, '.tmp', 'tsconfig.runtime-backup.json');
 const localTsconfigPath = path.join(cwd, 'tsconfig.local.json');
-const jsonManifestPath = path.join(cwd, 'scripts', '.strapi-json-manifest.ts');
+const jsonManifestPath = path.join(cwd, 'scripts', '.strapi-json-manifest.local.ts');
 
 let tsconfigSwapped = false;
 
@@ -62,6 +62,7 @@ if (fs.existsSync(backupPath) && !fs.existsSync(tsconfigPath)) {
 }
 
 if (fs.existsSync(localTsconfigPath) && fs.existsSync(tsconfigPath)) {
+  fs.mkdirSync(path.dirname(backupPath), { recursive: true });
   fs.renameSync(tsconfigPath, backupPath);
   fs.copyFileSync(localTsconfigPath, tsconfigPath);
   tsconfigSwapped = true;

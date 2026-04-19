@@ -11,7 +11,7 @@
   },
   "include": [
     "config/**/*.js",
-    "scripts/.strapi-json-manifest.ts",
+    "scripts/.strapi-json-manifest.local.ts",
     "src/**/*.js",
     "types/**/*.d.ts"
   ],

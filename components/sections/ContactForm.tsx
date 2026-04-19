@@ -47,23 +47,39 @@ export function ContactForm({ fields }: ContactFormProps) {
     if (!validate()) return;
 
     setStatus("loading");
+    setMessage("");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          values: formData,
+          fields: fields.map(({ id, label, type, required }) => ({
+            id,
+            label,
+            type,
+            required,
+          })),
+        }),
       });
 
       if (!res.ok) {
-        throw new Error("Submission failed");
+        const error = (await res.json().catch(() => null)) as
+          | { message?: string }
+          | null;
+        throw new Error(error?.message || "Submission failed");
       }
 
       setStatus("success");
       setMessage("Thank you! We'll be in touch soon.");
       setFormData({});
-    } catch {
+    } catch (error) {
       setStatus("error");
-      setMessage("Something went wrong. Please try again.");
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
     }
   }
 

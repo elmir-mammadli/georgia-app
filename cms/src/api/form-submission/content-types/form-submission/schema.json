@@ -26,6 +26,9 @@
     "message": {
       "type": "text"
     },
+    "payload": {
+      "type": "json"
+    },
     "source": {
       "type": "string",
       "default": "website-contact"
